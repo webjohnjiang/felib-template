@@ -57,7 +57,9 @@ npm install
 * `npm run devbuild`: execute webpack task, but not compress the code
 * `npm run start` or `npm start`: start a local server and hosting the webpack results, and open the browser automatically.
 
-
+## Configuration explain
+[从零开始搭建一个webpack类库开发脚手架[1]-概念](https://blog.cuiyongjian.com/2017/07/27/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAwebpack%E7%B1%BB%E5%BA%93%E5%BC%80%E5%8F%91%E8%84%9A%E6%89%8B%E6%9E%B6[1]-%E6%A6%82%E5%BF%B5/)
+[从零开始搭建一个webpack类库开发脚手架[2]-插件及常用解决方案](https://blog.cuiyongjian.com/2017/07/28/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAwebpack%E7%B1%BB%E5%BA%93%E5%BC%80%E5%8F%91%E8%84%9A%E6%89%8B%E6%9E%B6[2]-%E6%8F%92%E4%BB%B6%E5%8F%8A%E5%B8%B8%E7%94%A8%E5%AE%9E%E8%B7%B5/)
 
 
 ## License
