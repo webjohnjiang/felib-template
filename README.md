@@ -1,12 +1,12 @@
 felib-template
 ======
-A scaffold for the front end library. It is also an official template of lime-cli.
+A scaffold for the front end library. It is also an official template of [lime-cli](https://github.com/limefe/lime-cli).
 
 In addition, the official scaffold also has these:
 
 * html-template, a simple html5 html template
-* html5app-template, a html5 template with webpack bundle
-* felib-template, a front end library template
+* [html5app-template](https://github.com/cuiyongjian/html5app-template), a html5 template with webpack bundle
+* [felib-template](https://github.com/cuiyongjian/felib-template), a front end library template
 * node-cmd-template, a node.js commandline programe template
 * vue-template, a vue.js 2.0 template
 * vue-component-template, a startup template for a `Vue Components Library` project
@@ -24,7 +24,7 @@ In addition, the official scaffold also has these:
 
 ## Usage
 
-* First, install the lime-cli tools
+* First, install the [lime-cli](https://github.com/limefe/lime-cli) tools
 ``` bash
 npm install lime-cli -g
 ```
