@@ -10,7 +10,7 @@
 
 module.exports = {
   entry: 'index.js',
-  filename: 'fet',
+  filename: 'felib',
   devport: '9090'
 }
 

@@ -6,12 +6,13 @@ var config = require('../config')
 module.exports = merge(baseConfig, {
   devtool: 'source-map',
   output: {
-    filename: config.filename + '-[hash].min.js'
+    filename: config.filename + '-[chunkhash:6].min.js'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: true // 移除console.log日志
       }
     })
   ]

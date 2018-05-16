@@ -1,4 +1,12 @@
+/**
+ * 生产: 压缩
+ * 开发: 输入webpack日志；日志带颜色；检测代码变化；
+ */
+
+
+
 // 先检查开发者的开发环境是否满足我们package.json指定的开发环境版本要求，不满足会直接退出node进程
+// 默认的package.json里面的engines字段，仅仅用来做建议，并不会强制。所以需要手工检测
 require('./check-versions')()
 
 // 引入一个shell脚本执行库，用于执行shell命令，例如删除目标dist目录。
@@ -42,7 +50,7 @@ webpack(webpackConfig, (err, states) => {
   // 如果打包有错，直接扔出去，让node进程崩溃
   if (err) throw err
   // 输出webpack编译的状态信息
-  process.stdout.write(stats.toString({
+  process.stdout.write(states.toString({
     colors: true,
     modules: false,
     children: false,

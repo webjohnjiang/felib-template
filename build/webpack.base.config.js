@@ -1,5 +1,5 @@
 var path = require('path')
-var rootPath = path.resolve(__dirname, '../') // 这种第一个参数就是绝对路径的情况，用join和resolve是一样的
+var rootPath = path.resolve(__dirname, '../') // 这种第一个参数就是绝对路径__dirname的情况，用join和resolve是一样的
 var config = require('../config')
 
 module.exports = {
@@ -9,27 +9,22 @@ module.exports = {
     publicPath: '/'
   },
   resolve: {
-    extensions: ['', '.js'],
-    fallback: [path.join(__dirname, '../node_modules')],
+    extensions: ['.js', '.json'],
     alias: {
+      '~': path.resolve(__dirname, '../src'),
       'src': path.resolve(__dirname, '../src')
     }
   },
-  // 这个具体含义需要查一下
-  resolveLoader: {
-    fallback: [path.join(__dirname, '../node_modules')]
-  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /(node_modules|bower_components)/,
         use: [
           {
-            loader: 'babel',
+            loader: 'babel-loader',
             options: {
-              presets: ['es2015'],
-              plugins: ['transform-runtime'],
+              presets: ['env'],
               comments: false
             }
           }
