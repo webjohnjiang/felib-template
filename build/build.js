@@ -3,12 +3,9 @@
  * 开发: 输入webpack日志；日志带颜色；检测代码变化；
  */
 
-
-
 // 先检查开发者的开发环境是否满足我们package.json指定的开发环境版本要求，不满足会直接退出node进程
 // 默认的package.json里面的engines字段，仅仅用来做建议，并不会强制。所以需要手工检测
 require('./check-versions')()
-
 // 引入一个shell脚本执行库，用于执行shell命令，例如删除目标dist目录。
 var shell = require('shelljs')
 // 引入终端屏幕上的状态提示字符动画工具
@@ -21,7 +18,15 @@ var webpack = require('webpack')
 var path = require('path')
 
 
+// 监听系统信号，安静退出
+process.on('SIGINT', () => {
+  console.log('\n  感谢您的使用，再见. 🙂')
+  process.exit(0)
+});
+
+
 // 根据Bash用户环境变量获取到合适的webpack配置
+// (在vue.js官方脚手架里直接默认build就是生产环境了，所以在这里直接指定为了production, 而我们为了灵活，将env通过npm script传递过来了)
 var env = process.env.NODE_ENV
 var configMap = {production: 'webpack.prod.config', development: 'webpack.dev.config'}
 var webpackConfig = require(path.join(__dirname, configMap[env]))
@@ -36,7 +41,7 @@ console.log(chalk.yellow(
 var spinner = ora('building for production...')
 spinner.start()
 
-// 执行删除dist的shell命令
+// 执行删除dist的shell命令 (也可以使用webpack的 CleanWebpackPlugin 插件实现)
 if (shell.test('-d', 'dist')) {
   console.log('delete dist folder')
   shell.rm('-rf', 'dist')
@@ -65,7 +70,6 @@ webpack(webpackConfig, (err, states) => {
     '  将其放置到互联网的cdn服务器上也是个比较好的选择.\n'
   ))
 }, 3000)
-
 
 
 

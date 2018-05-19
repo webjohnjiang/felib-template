@@ -1,13 +1,23 @@
 var merge = require('webpack-merge')
 var baseConfig = require('./webpack.base.config')
 var config = require('../config')
+const path = require('path')
+const rootPath = path.resolve(__dirname, '../')
 
 module.exports = merge(baseConfig, {
-  devtool: 'eval-source-map',
+  // devtool: 'eval-source-map',
   output: {
-    filename: config.filename
+    filename: config.filename + '.js'
   },
-  plugins: []
+  plugins: [],
+  mode: 'development',
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/
+  },
+  devServer: {
+    contentBase: path.resolve(rootPath, config.outputPath) // contentBase是告诉dev-server托管哪个目录
+  }
 })
 
 

@@ -8,12 +8,14 @@
     "src",
     "dist"
   ],
+  "module": "src/index.js",
+  "main": "dist/felib.js",
   "scripts": {
     "clean": "shx rm -rf dist && shx echo \"> clean finished!\"",
-    "build": "cross-env NODE_ENV=production node build/build.js",
+    "dev1": "node build/dev-server.js",
+    "dev2": "webpack-dev-server --open --inline --progress --config build/webpack.dev.config.js",
     "devbuild": "cross-env NODE_ENV=development node build/build.js",
-    "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "node build/dev-server.js",
+    "build": "cross-env NODE_ENV=production node build/build.js",
     "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
   },
   "dependencies": {},
@@ -24,12 +26,17 @@
     "chai": "^4.1.2",
     "chalk": "^2.4.1",
     "cross-env": "^5.1.5",
+    "express": "^4.16.3",
+    "kitty-lang": "https://github.com/cuiyongjian/kitty-lang",
     "mocha": "^5.1.1",
     "ora": "^1.4.0",
     "semver": "^5.5.0",
     "shelljs": "^0.7.8",
     "shx": "^0.2.2",
-    "webpack": "^3.12.0",
+    "webpack": "^4.8.3",
+    "webpack-cli": "^2.1.3",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-dev-server": "^3.1.4",
     "webpack-merge": "^4.1.2"
   },
   "repository": {

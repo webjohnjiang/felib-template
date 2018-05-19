@@ -1,6 +1,7 @@
-var merge = require('webpack-merge')
-var baseConfig = require('./webpack.base.config')
-var config = require('../config')
+const merge = require('webpack-merge')
+const baseConfig = require('./webpack.base.config')
+const config = require('../config')
+const webpack = require('webpack')
 
 
 module.exports = merge(baseConfig, {
@@ -8,12 +9,6 @@ module.exports = merge(baseConfig, {
   output: {
     filename: config.filename + '-[chunkhash:6].min.js'
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        drop_console: true // 移除console.log日志
-      }
-    })
-  ]
+  plugins: [],
+  mode: 'production'
 })

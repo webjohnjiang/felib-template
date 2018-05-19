@@ -3,5 +3,6 @@ import sub from './sub'
 
 export default {
   add,
-  sub
+  sub,
+  hello: {a: 1}
 }
