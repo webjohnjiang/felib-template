@@ -1,0 +1,25 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": [
+          "last 2 versions",
+          "safari >= 7"
+        ],
+        "node": "current"
+      },
+      "modules": "commonjs",
+      "useBuiltIns": true,
+      "includes": [],
+      "excludes": []
+    }]
+  ],
+  "plugins": [
+    ["transform-runtime", {
+        "helpers": true,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+    }]
+  ]
+}

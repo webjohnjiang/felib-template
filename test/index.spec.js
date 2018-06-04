@@ -13,12 +13,12 @@ describe('类型方面的测试', function () {
 
 describe('方法方面的测试', function () {
 
-  it('index.log is a function', function () {
-    expect(index.foo).to.be.an.instanceof(Function);
+  it('index.add is a function', function () {
+    expect(index.add).to.be.an.instanceof(Function);
   });
 
-  it('index.dir is a function', function () {
-    expect(index.bar).to.be.an.instanceof(Function);
+  it('index.sub is a function', function () {
+    expect(index.sub).to.be.an.instanceof(Function);
   });
 
 });

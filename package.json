@@ -3,25 +3,25 @@
   "version": "1.0.0",
   "description": "A scaffold for the front end library",
   "author": "felib",
-  "main": "index.js",
+  "main": "dist/felib.js",
   "files": [
     "src",
     "dist"
   ],
   "module": "src/index.js",
-  "main": "dist/felib.js",
   "scripts": {
     "clean": "shx rm -rf dist && shx echo \"> clean finished!\"",
     "dev1": "node build/dev-server.js",
     "dev2": "webpack-dev-server --open --inline --progress --config build/webpack.dev.config.js",
     "devbuild": "cross-env NODE_ENV=development node build/build.js",
     "build": "cross-env NODE_ENV=production node build/build.js",
-    "test": "mocha --compilers js:babel-core/register --colors -w ./test/*.spec.js"
+    "test": "mocha --require babel-core/register --colors --watch --watch-extensions js ./test/*.spec.js"
   },
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "chai": "^4.1.2",
     "chalk": "^2.4.1",
